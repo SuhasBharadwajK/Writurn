@@ -1,0 +1,151 @@
+@font-face {
+  font-family: 'Museo-Slab';
+  src: url('Museo_Slab.ttf');
+}
+
+@font-face {
+  font-family: 'Questa-Regular';
+  src: url("Questa_Regular.ttf");
+}
+
+body {
+  background-color: #eaeaea;
+  z-index: 1;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#writing_turn {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+  margin-bottom: 100px;
+  align-self: center;
+}
+
+#writing_area {
+  z-index: -1;
+}
+
+#writing_area_title {
+  width: 100%;
+  height: 85px;
+  resize: none;
+  border: none;
+  display: block;
+  padding-top: 30px;
+  padding-left: 20px;
+  font-size: 40px;
+  outline: none;
+  font-family: Questa-Regular;
+  color: #5a5a5a;
+}
+
+#writing_area_content {
+  width: 100%;
+  height: 1500px;
+  resize: none;
+  border: none;
+  display: block;
+  padding-top: 20px;
+  padding-left: 20px;
+  font-size: 25px;
+  outline: none;
+  font-family: Museo-Slab;
+  color: #666666;
+  border-radius: 0px 0px 7px 7px;
+}
+
+#writing_content {
+  height: 400px;
+  width: 100%-20px;
+  font-size: 25px;
+  font-family: Museo-Slab;
+  background-color: #ffffff;
+  border-radius: 0px 0px 7px 7px;
+  padding: 20px;
+  outline: none;
+
+}
+
+#writing_content:empty:not(:focus):before{
+  content: attr(data-ph);
+  opacity: 0.5;
+}
+
+/*#writing_content:empty:not(:focus):before{
+        content:attr(data-text)
+}*/
+
+#controlbox {
+  width: 100%;
+  height: 50px;
+  background-color: #8283a3;
+  z-index: 1;
+  position: relative;
+  list style: disc;
+  border-radius: 7px 7px 0px 0px;
+}
+
+#font_controls {
+  padding-top: 10px;
+  padding-left: 20px;
+}
+
+li {
+  display: inline;
+  color: #d6d6d6;
+  font-size: 24px;
+  border: 2px rgba(255, 255, 255, 0.00) solid;
+  padding: 5px 23px 6px 27px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 5px;
+  //padding-left: 30px;
+  -webkit-transition: background-color 0.4s ease-in;
+
+}
+
+li:hover {
+  color:#FFF;
+  background-color:#343434;
+}
+
+#bolder {
+  padding-top: 4px;
+  font-size: 22px;
+  font-family: Verdana;
+}
+
+#italicer {
+  padding: 5px 27px 6px 29px;
+
+}
+
+#underliner {
+  padding: 5px 27px 6px 28px;
+}
+
+*::-webkit-input-placeholder {
+    color: black;
+    opacity: 0.6;
+}
+
+*::-moz-placeholder {
+  color: black;
+  opacity: 0.6;
+}
+
+*:-moz-placeholder {
+  color: black;
+  opacity: 0.6;
+}
+
+*:-ms-input-placeholder {
+  color: black;
+  opacity: 0.6;
+}

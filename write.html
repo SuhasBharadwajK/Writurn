@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>Write A New Writurn</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div id="writing_turn">
+      <div id="controlbox" class="panel">
+        <div id="font_controls">
+          <a id="bolder_click" href="#" onclick="bold()">
+            <li id="bolder">
+              <b>B</b>
+            </li>
+          </a>
+          <a id="italicer_click" href="#" onclick="italic()">
+            <li id="italicer">
+              <i>I</i>
+            </li>
+          </a>
+          <a id="underliner_click" href="#" onclick="underline()">
+            <li id="underliner">
+              <u>U</u>
+            </li>
+          </a>
+        </div>
+      </div>
+      <div id="writing_area" class="panel">
+        <textarea id="writing_area_title" placeholder="Title your thoughts" onfocus="this.placeholder = '';" onblur="this.placeholder = 'Title your thoughts'" ></textarea>
+        <!--<textarea id="writing_area_content" placeholder="Pen your thoughts" onfocus="this.placeholder = '';" onblur="this.placeholder = 'Pen your thoughts'"></textarea>-->
+        <div id="writing_content" contentEditable=true data-ph="Pen your thoughts" later=""></div>
+      </div>
+    </div>
+  </body>
+</html>
