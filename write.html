@@ -10,11 +10,41 @@
       //writing = document.getElementById('writing_content');
       //writing.on('keypress', function(e){});
       //writing.on('keypress', function(e){console.log(e);});
+
+      var image = document.createElement("img");
+
+
       $(document).ready(function() {
+        var editor = document.getElementById('writing_content');
+
+        editor.onpaste = function(e) {
+          if(e.clipboardData && e.clipboardData.getData) {
+            console.log(e.clipboardData.getData('text/plain'));
+            image.src = e.clipboardData.getData('text/plain');
+            console.log(image.width);
+            imagew = image.width;
+            imageh = image.height;
+            image.setAttribute("width", "100%");
+            editor.appendChild(image);
+            console.log(image.height);
+            console.log(image.width);
+            console.log(editor.offsetWidth);
+            console.log(editor.offsetHeight);
+
+            if (editor.offsetHeight <= ((imageh*editor.offsetWidth)/imagew + 150)) {
+              console.log("Greater");
+              $('#writing_content').height("+=150px")
+            }
+          }
+          //console.log("Pasted Now!");
+        }
+
         var ctrlDown = false;
         var ctrlKey = 17, vKey = 86, cKey = 67;
         var lines = 0;
         var limit = 11;
+
+        //console.log(editor);
 
         $(document).keydown(function(e) {
           if (e.keyCode == ctrlKey) ctrlDown = true;})
@@ -37,6 +67,9 @@
         }
         });
       });
+
+
+
     </script>
   </head>
   <body>
