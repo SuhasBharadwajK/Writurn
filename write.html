@@ -3,6 +3,41 @@
     <title>Write A New Writurn</title>
     <link rel="stylesheet" type="text/css" href="stylesheet.css" />
     <script src="script.js"></script>
+    <script src="jquery-2.1.4.js"></script>
+    <script>
+      //var divid = "writing_content";
+      //$('#writing_content').bind("keyup", function(e) {console.log(String.fromCharCode(e.keyCode));});
+      //writing = document.getElementById('writing_content');
+      //writing.on('keypress', function(e){});
+      //writing.on('keypress', function(e){console.log(e);});
+      $(document).ready(function() {
+        var ctrlDown = false;
+        var ctrlKey = 17, vKey = 86, cKey = 67;
+        var lines = 0;
+        var limit = 11;
+
+        $(document).keydown(function(e) {
+          if (e.keyCode == ctrlKey) ctrlDown = true;})
+          .keyup(function(e) {
+            if (e.keyCode == ctrlKey) ctrlDown = false;
+          });
+
+      $("#writing_content").keydown(function(e) {
+        if (ctrlDown && (e.keyCode == vKey || e.keyCode == cKey)) console.log("Yeah!");
+        if (e.which == 13) {
+          console.log("Entered");
+          lines++;
+          console.log(lines);
+        }
+        if (lines == limit) {
+          console.log('End of the line homie');
+          $(this).height('+=150px');
+          limit = 5;
+          lines = 0;
+        }
+        });
+      });
+    </script>
   </head>
   <body>
     <div id="writing_turn">
@@ -28,7 +63,7 @@
       <div id="writing_area" class="panel">
         <textarea id="writing_area_title" placeholder="Title your thoughts" onfocus="this.placeholder = '';" onblur="this.placeholder = 'Title your thoughts'" ></textarea>
         <!--<textarea id="writing_area_content" placeholder="Pen your thoughts" onfocus="this.placeholder = '';" onblur="this.placeholder = 'Pen your thoughts'"></textarea>-->
-        <div id="writing_content" contentEditable=true data-ph="Pen your thoughts" later=""></div>
+        <div id="writing_content" contentEditable=true data-ph="Pen your thoughts" later="" onkeydown="loaded(event)"></div>
       </div>
     </div>
   </body>
