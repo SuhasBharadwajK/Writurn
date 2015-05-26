@@ -24,7 +24,7 @@ function loaded(e) {
     ctrlDown = true;
   }
   if(ctrlDown && e.which == 86) {
-    alert("Pasted!");
+    //alert("Pasted!");
     ctrlDown = false;
   }
   if (a == 12) {
